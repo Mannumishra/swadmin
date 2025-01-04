@@ -14,7 +14,7 @@ const AllEvents = () => {
         const fetchEvents = async () => {
             setIsLoading(true);
             try {
-                const response = await axios.get('http://localhost:8000/api/all-events');
+                const response = await axios.get('https://swhealthcare.digiindiasolutions.com/api/all-events');
                 console.log(response)
                 setEvents(response.data); // Assuming the API returns an array of events
             } catch (error) {
@@ -40,7 +40,7 @@ const AllEvents = () => {
             });
 
             if (result.isConfirmed) {
-                await axios.delete(`http://localhost:8000/api/delete-events/${eventId}`);
+                await axios.delete(`https://swhealthcare.digiindiasolutions.com/api/delete-events/${eventId}`);
                 setEvents(events.filter((event) => event._id !== eventId)); // Remove the deleted event from the state
                 Swal.fire('Deleted!', 'Your event has been deleted.', 'success');
             }

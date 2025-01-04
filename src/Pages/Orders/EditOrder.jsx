@@ -56,7 +56,7 @@ import { PDFDownloadLink, Page, Text, View, Document, StyleSheet } from "@react-
 //             const details = [];
 //             for (const product of order.products) {
 //                 try {
-//                     const response = await axios.get(`http://localhost:8000/api/single-product/${product.productId}`);
+//                     const response = await axios.get(`https://swhealthcare.digiindiasolutions.com/api/single-product/${product.productId}`);
 //                     const productDetails = response.data.product;
 
 //                     const productInfo = productDetails.productInfo.find(info => info.productweight === product.weight);
@@ -140,7 +140,7 @@ const EditOrder = () => {
     useEffect(() => {
         const fetchOrder = async () => {
             try {
-                const response = await axios.get(`http://localhost:8000/api/single-order-data/${orderId}`);
+                const response = await axios.get(`https://swhealthcare.digiindiasolutions.com/api/single-order-data/${orderId}`);
                 if (response.data.success) {
                     setOrder(response.data.data);
                     setOrderStatus(response.data.data.orderStatus);
@@ -161,7 +161,7 @@ const EditOrder = () => {
 
     const handleUpdate = async () => {
         try {
-            const response = await axios.put(`http://localhost:8000/api/update-order/${orderId}`, {
+            const response = await axios.put(`https://swhealthcare.digiindiasolutions.com/api/update-order/${orderId}`, {
                 orderStatus,
                 paymentStatus,
             });

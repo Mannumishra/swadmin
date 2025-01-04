@@ -15,7 +15,7 @@ const Header = () => {
 
   const logout = async () => {
     try {
-      const response = await axios.post('http://localhost:8000/api/log-out', {}, { withCredentials: true });
+      const response = await axios.post('https://swhealthcare.digiindiasolutions.com/api/log-out', {}, { withCredentials: true });
       if (response.status === 200) {
         localStorage.clear(); // Clear all local storage data
         toast.success("Logout successful!"); // Added feedback for successful logout
@@ -65,8 +65,8 @@ const Header = () => {
             <li className={isActive('/all-products') || isActive("/add-product") || isActive("/edit-produc") ? 'active' : ''} ><Link to="/all-products" onClick={handletoggleBtn}> <i class="fa-solid fa-box"></i> Manage Product</Link></li>
             <li className={isActive('/all-pincodes') || isActive("/add-pincode") || isActive("/edit-pincode") ? 'active' : ''}><Link to="/all-pincodes" onClick={handletoggleBtn}> <i class="fa-solid fa-location-dot"></i> Manage Pincode</Link></li>
             <li className={isActive('/all-events') || isActive("/add-event") || isActive("/edit-event") ? 'active' : ''}><Link to="/all-events" onClick={handletoggleBtn}> <i class="fa-solid fa-calendar-check"></i>  Manage Events</Link></li>
-            <li className={isActive('/all-users') ? 'active' : ''} ><Link to="/all-users" onClick={handletoggleBtn}> <i class="fa-solid fa-users"></i> All Users</Link></li>
-
+          {/*   <li className={isActive('/all-users') ? 'active' : ''} ><Link to="/all-users" onClick={handletoggleBtn}> <i class="fa-solid fa-users"></i> All Users</Link></li>
+ */}
             <button className='logout mb-5' onClick={logout}>Log Out <i class="fa-solid fa-right-from-bracket"></i></button>
 
           </ul>

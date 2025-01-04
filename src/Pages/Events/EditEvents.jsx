@@ -24,7 +24,7 @@ const EditEvents = () => {
     useEffect(() => {
         const fetchEventData = async () => {
             try {
-                const response = await axios.get(`http://localhost:8000/api/get-single-events/${id}`);
+                const response = await axios.get(`https://swhealthcare.digiindiasolutions.com/api/get-single-events/${id}`);
                 setEventData({
                     eventName: response.data.eventName,
                     eventHeading: response.data.eventHeading,
@@ -87,7 +87,7 @@ const EditEvents = () => {
         }
 
         try {
-            const response = await axios.put(`http://localhost:8000/api/update-events/${id}`, formData, {
+            const response = await axios.put(`https://swhealthcare.digiindiasolutions.com/api/update-events/${id}`, formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 },

@@ -69,7 +69,7 @@ const AddEvents = () => {
         formData.append('eventsStatus', data.eventsStatus);
 
         try {
-            const response = await axios.post('http://localhost:8000/api/add-events', formData, {
+            const response = await axios.post('https://swhealthcare.digiindiasolutions.com/api/add-events', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 },
